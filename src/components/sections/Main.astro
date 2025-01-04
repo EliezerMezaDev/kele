@@ -1,0 +1,56 @@
+---
+const jobs: any[] = [
+  {
+    title: "title 1",
+    tags: ["tag1", "tag2", "tag3"],
+    bgMainImage: "/images/jobs/job1.png",
+    bgHoverImage:
+      "https://assets.dunked.com/assets/prod/120709/600x600-2_p1hkgv2jfv1o7q1h351pqf1ro97vu3.jpg",
+  },
+  {
+    title: "title 2",
+    tags: ["tag1", "tag2", "tag3"],
+    bgMainImage: "/images/jobs/job1.png",
+    bgHoverImage:
+      "https://assets.dunked.com/assets/prod/120709/600x600-2_p1hkgv2jfv1o7q1h351pqf1ro97vu3.jpg",
+  },
+  {
+    title: "title 3",
+    tags: ["tag1", "tag2", "tag3"],
+    bgMainImage: "/images/jobs/job1.png",
+    bgHoverImage:
+      "https://assets.dunked.com/assets/prod/120709/600x600-2_p1hkgv2jfv1o7q1h351pqf1ro97vu3.jpg",
+  },
+  {
+    title: "title 4",
+    tags: ["tag1", "tag2", "tag3"],
+    bgMainImage: "/images/jobs/job1.png",
+    bgHoverImage:
+      "https://assets.dunked.com/assets/prod/120709/600x600-2_p1hkgv2jfv1o7q1h351pqf1ro97vu3.jpg",
+  },
+  {
+    title: "title 5",
+    tags: ["tag1", "tag2", "tag3"],
+    bgMainImage: "/images/jobs/job1.png",
+    bgHoverImage:
+      "https://assets.dunked.com/assets/prod/120709/600x600-2_p1hkgv2jfv1o7q1h351pqf1ro97vu3.jpg",
+  },
+];
+---
+
+<section class="grid grid-cols-3">
+  {
+    jobs.map((j) => (
+      <article class="w-full aspect-square overflow-hidden">
+        <a href="#">
+          <div
+            class={`w-full aspect-square bg-no-repeat bg-cover bg-center scale-110 transition-all duration-300 overflow-hidden z-1 hover:scale-100 relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-aqua-50/10 after:transition-all after:hover:bg-[transparent] after:z-10`}
+            style={`background-image: url('${j.bgMainImage}')`}
+          />
+        </a>
+      </article>
+
+      //   <img src={j.bgMainImage} alt="" />
+    ))
+  }
+</section>
