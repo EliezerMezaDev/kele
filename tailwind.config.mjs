@@ -4,20 +4,12 @@ export default {
   theme: {
     extend: {},
     colors: {
-      aqua: {
-        0: "#edfffb",
-        50: "#edfffb",
-        100: "#c0fff6",
-        200: "#81ffee",
-        300: "#3affe5",
-        400: "#00ffd5",
-        500: "#00e2be",
-        600: "#00b79e",
-        700: "#00917e",
-        800: "#007266",
-        900: "#045d54",
-        950: "#003a37",
-      },
+      
+      liten: "#e7eff2",
+      lite: "#a2c5c1",
+      base: "#6d9d9d",
+      dark: "#416c72",
+      darken: "#1a2b32",
     },
   },
   plugins: [],

@@ -1,0 +1,50 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { JOB_SOURCE } from "../../lib/data";
+
+export async function getStaticPaths() {
+  const jobs = JOB_SOURCE;
+
+  return jobs.map((job) => ({
+    params: { id: job.id },
+    props: { job },
+  }));
+}
+
+const { job } = Astro.props;
+const { title, tags, bgHoverImage, bgMainImage } = job;
+
+export const prerender = true;
+---
+
+<Layout>
+  <main class="grid grid-cols-3">
+    <article class="p-2 col-span-1 flex flex-col">
+      <p class="self-end">13-02-2025</p>
+
+      <h1 class="mb-2 text-4xl font-bold">{title}</h1>
+
+      <span class="mb-4 flex flex-row gap-2 z-20">
+        {
+          tags.map((t) => (
+            <a
+              href="#"
+              class="px-2 py-1 font-semibold border text-liten bg-darken hover:bg-dark cursor-pointer"
+            >
+              {t}
+            </a>
+          ))
+        }
+      </span>
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis doloribus
+        earum cupiditate cum voluptas harum suscipit, in sit modi amet ullam nam
+        voluptatum vero aperiam. Excepturi facere amet voluptate expedita?
+      </p>
+    </article>
+
+    <img class="w-full aspect-square" src={bgHoverImage} />
+    <img class="w-full aspect-square" src={bgMainImage} />
+  </main>
+</Layout>
