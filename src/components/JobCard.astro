@@ -1,0 +1,25 @@
+---
+interface Props extends Kele.Job {}
+
+const { title, tags, bgMainImage, bgHoverImage, id } = Astro.props;
+---
+
+<article class="w-full aspect-square overflow-hidden">
+  <div
+    class={`relative w-full aspect-square bg-no-repeat bg-cover bg-center scale-110 transition-all duration-300 overflow-hidden z-1 flex justify-center items-center flex-col text-[transparent] hover:text-liten  hover:scale-100 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[transparent] after:transition-all after:hover:bg-darken/50 after:z-10 after:pointer-events-none`}
+    style={`background-image: url('${bgMainImage}')`}
+  >
+    <a href={`/jobs/${id}`} class="z-20">
+      <h2 class="text-2xl mb-4">{title}</h2>
+    </a>
+    <span class="flex flex-row gap-2 z-20">
+      {
+        tags.map((t) => (
+          <a href="#" class="cursor-pointer z-10 hover:underline">
+            #{t}
+          </a>
+        ))
+      }
+    </span>
+  </div>
+</article>
