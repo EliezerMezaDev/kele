@@ -4,13 +4,15 @@ export default {
   theme: {
     extend: {},
     colors: {
-      
       liten: "#e7eff2",
       lite: "#a2c5c1",
       base: "#6d9d9d",
       dark: "#416c72",
       darken: "#1a2b32",
     },
+  },
+  screens: {
+    sm: "576px",
   },
   plugins: [],
 };

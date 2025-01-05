@@ -5,6 +5,6 @@ import { JOB_SOURCE } from "../../lib/data.ts";
 const jobs: Kele.Job[] = JOB_SOURCE;
 ---
 
-<section class="grid grid-cols-3">
+<section class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2">
   {jobs.map((j) => <JobCard {...j} />)}
 </section>
