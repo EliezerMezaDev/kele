@@ -18,17 +18,19 @@ import Footer from "../components/Footer.astro";
     <title>Kele | Portafolio</title>
   </head>
   <body class="min-h-screen min-w-full bg-liten text-darken">
-    <div>
-      <Header />
+    <Header />
 
+    <main class="min-h-screen">
       <slot />
+    </main>
 
-      <Footer />
-    </div>
-  </body><style>
-    *::-webkit-scrollbar {
-      width: 0;
-      display: none;
-    }
-  </style>
+    <Footer />
+  </body>
 </html>
+
+<style>
+  *::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+</style>
