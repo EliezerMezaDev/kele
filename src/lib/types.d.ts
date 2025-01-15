@@ -5,8 +5,19 @@ declare namespace Kele {
   interface Job {
     id: number;
     title: string;
-    tags: string[];
-    bgMainImage: string;
-    bgHoverImage: string;
+    date: string;
+    desc: string;
+    tags_id: number[];
+    portraid: string;
+    resources?: string;
+  }
+
+  interface JobSource extends Job {
+    tags: Tag[];
+  }
+
+  interface Tag {
+    id: number;
+    name: string;
   }
 }

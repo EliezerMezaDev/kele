@@ -1,10 +1,35 @@
 ---
-import JobCard from "../JobCard.astro";
-import { JOB_SOURCE } from "../../lib/data.ts";
+import { getCollection, getEntries } from "astro:content";
 
-const jobs: Kele.Job[] = JOB_SOURCE;
+const jobs: any[] = await getCollection("jobs");
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2">
-  {jobs.map((j) => <JobCard {...j} />)}
+  {
+    jobs.map(async (j) => {
+      const { title, src, portraid } = j.data;
+
+      const tags = await getEntries(j.data.tags);
+
+      return (
+        <article class="w-full aspect-square overflow-hidden">
+          <div
+            class={`relative w-full aspect-square bg-no-repeat bg-cover bg-center scale-110 transition-all duration-300 overflow-hidden z-1 flex justify-center items-center flex-col text-[transparent] hover:text-liten  hover:scale-100 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[transparent] after:transition-all after:hover:bg-darken/80 after:z-10 after:pointer-events-none`}
+            style={`background-image: url('${portraid.src}')`}
+          >
+            <a href={`/jobs/${j.id}`} class="z-20">
+              <h2 class="text-2xl font-bold mb-4">{title}</h2>
+            </a>
+            <span class="flex flex-row gap-2 z-20">
+              {tags.map((t: any) => (
+                <a href="#" class="cursor-pointer z-10 hover:underline">
+                  #{t.data.name}
+                </a>
+              ))}
+            </span>
+          </div>
+        </article>
+      );
+    })
+  }
 </section>
