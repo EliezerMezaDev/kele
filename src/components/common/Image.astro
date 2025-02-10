@@ -7,15 +7,22 @@ interface Props {
 }
 
 const { src, alt } = Astro.props;
+
 ---
 
 <picture>
   <source type="image/avif" srcset={src + ".avif"} />
   <source type="image/webp" srcset={src + ".webp"} />
-  <img src={src + ".webp"} alt={alt} decoding="async" loading="lazy" onload={""} />
+  <img
+    src={src + ".webp"}
+    alt={alt}
+    decoding="async"
+    loading="lazy"
+    onload={""}
+  />
 </picture>
 
-<style >
+<style>
   .scale-up-center {
     animation: scale-up-center 0.4s;
   }

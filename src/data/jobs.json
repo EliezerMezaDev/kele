@@ -94,6 +94,6 @@
     "desc": "Una artista con un proyecto ambicioso, me contactó para diseñar una marca creativa que mezclara una estética dark academia con elementos de arte, para darse una imagen más reconocible en sus redes sociales.",
     "tags": ["0"],
     "portraid": "/src/assets/images/jobs/midnart/_cover.webp",
-    "resources": ["/src/assets/images/jobs/midnart/01"]
+    "resources": ["images/jobs/midnart/01"]
   }
 ]

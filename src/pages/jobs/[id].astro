@@ -27,9 +27,7 @@ export const prerender = true;
 ---
 
 <Layout>
-  <section
-    class="p-2 columns-1 lg:columns-3 md:columns-2 space-y-4"
-  >
+  <section class="p-2 columns-1 lg:columns-3 md:columns-2 space-y-4">
     <article class="col-span-1 flex flex-col">
       <date class="self-end">{date}</date>
 
@@ -64,50 +62,3 @@ export const prerender = true;
     }
   </section>
 </Layout>
-
-<!-- <main>
-  <div class="px-8 grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2">
-    <article class="w-[800px] mx-auto p-2 mb-8 flex flex-col">
-      <date class="self-end">{date}</date>
-
-      <h1 class="mb-2 text-4xl font-bold">{title}</h1>
-
-      <span role="list" class="mb-2 flex flex-row gap-2 z-20">
-        {
-          tags.map((t: any) => (
-            <a
-              href="#"
-              class="px-2 py-1 font-semibold border text-liten bg-darken hover:bg-dark cursor-pointer"
-            >
-              {t.data.name}
-            </a>
-          ))
-        }
-      </span>
-
-      <p>
-        {desc}
-      </p>
-    </article>
-
-    {
-      resources.map((r: any) => (
-        <article>
-          <Image src={r} alt="foto de perfil del usuario" />
-        </article>
-      ))
-    }
-  </div>
-</main> -->
-<!-- 
-<script>
-  import PhotoSwipeLightbox from "photoswipe";
-
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: "#gallery",
-    children: "a",
-    pswpModule: () => import("photoswipe"),
-  });
-
-  lightbox.init();
-</script> -->
